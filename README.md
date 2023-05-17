@@ -13,15 +13,15 @@ An implementation of **CompGCN** in [Tensorflow](https://www.tensorflow.org/). T
 ## Train model
 To train the model:
 
-`python run.py -score_func transe -opn sub -init_dim 200`
+`python train.py -score_func transe -opn sub -init_dim 200`
 
 or
 
-`python run.py -score_func distmult -opn sub -gcn_dim 150`
+`python train.py -score_func distmult -opn sub -gcn_dim 150`
 
 or
 
-`python run.py -score_func conve -opn sub ker_sz 5`
+`python train.py -score_func conve -opn sub ker_sz 5`
 
 - `-score_func` is the scoring function for link prediction: `transe`, `distmult` or `conve`
 - `-opn` is the composition operation: `sub` for subtraction, `mult` for multiplication or `corr` for circular correlation
