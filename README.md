@@ -98,10 +98,10 @@ As we can see the **best models** are ConvE with every composition operators.
    </tr>
    <tr>
       <th>DistMult
-      </th><td> - </td>
-      <td> - </td>
-      <td> - </td>
-      <td> - </td>
+      </th><td>0.120 ± 0.008</td>
+      <td>0.052 ± 0.009</td>
+      <td>0.123 ± 0.013</td>
+      <td>0.258 ± 0.023</td>
    </tr>
    <tr>
       <th>ConvE
