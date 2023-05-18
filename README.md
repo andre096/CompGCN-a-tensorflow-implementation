@@ -29,7 +29,7 @@ or
 
 ## Result
 The following results are obtained doing, for every score function, 5 tests with different seeds and then taking their average and standard deviation.
-As we can see the **best models** are ConvE with every composition operators. 
+As we can see the **best models** for every composition operators is ConvE. 
 
 <table>
    <tbody><tr>
