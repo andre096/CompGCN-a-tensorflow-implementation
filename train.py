@@ -149,6 +149,9 @@ class Runner:
                 kill_cnt = 0
             else:
                 kill_cnt += 1
+                if kill_cnt % 10 == 0 and self.p.gamma > 5:
+                    self.p.gamma -= 5
+                    print('Gamma decay on saturation, updated value of gamma: {}'.format(self.p.gamma))
                 if kill_cnt > 25:
                     print("Early Stopping!!")
                     break
@@ -174,10 +177,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Parser For Arguments',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('-data', dest='dataset', default='FB15k-237', help='Dataset to use, default: FB15k-237')
+    parser.add_argument('-data', dest='dataset', default='pharmkg', help='Dataset to use, default: FB15k-237')
     parser.add_argument('-score_func', dest='score_func', default='transe', help='Score Function for Link prediction')
     parser.add_argument('-opn', dest='opn', default='corr', help='Composition Operation to be used in CompGCN')
-
+    parser.add_argument('-gamma', type=float, default=9.0, help='Margin')
     parser.add_argument('-batch', dest='batch_size', default=128, type=int, help='Batch size')
     parser.add_argument('-gpu', type=str, default='0', help='Set GPU Ids : Eg: For CPU = -1, For Single GPU = 0')
     parser.add_argument('-epochs', dest='epochs', type=int, default=300, help='Number of epochs')

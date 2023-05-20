@@ -31,7 +31,7 @@ class CompGCNTransE(keras.Model):
 
         obj_emb = sub_emb + rel_emb
 
-        x = -tf.norm((tf.expand_dims(obj_emb, axis=1)) - all_ent, ord=1, axis=2)
+        x = self.p.gamma - tf.norm((tf.expand_dims(obj_emb, axis=1)) - all_ent, ord=1, axis=2)
         score = tf.keras.activations.sigmoid(x)
 
         return score
