@@ -31,7 +31,7 @@ class MessagePassing(keras.layers.Layer):
             if arg[-2:] == '_i':
                 tmp = kwargs[arg[:-2]]
                 size = tf.shape(tmp)[0]
-                message_args.append(tmp[edge_index[0]])
+                message_args.append(tf.gather(tmp, edge_index[0]))
             elif arg[-2:] == '_j':
                 tmp = kwargs[arg[:-2]]
                 size = tf.shape(tmp)[0]
